@@ -89,7 +89,7 @@
                  (setv water-response (.choice random ["hey now" 
                                                        "\uFFFD?\u25A1\uFFFDMY\uFFFDEYES!"
                                                        "IT BURNSSSS!"
-                                                       "ohmy, you did me a fright"
+                                                       "ohmy, you did me a frighten"
                                                        "stop that"]))
                  (send-message water-response)
                  (.sleep time 1))
