@@ -1,0 +1,62 @@
+#!/usr/bin/env hy
+; a possible rewrite of emfor in hy
+(import socket time re random os)
+
+(def ircsock (.socket socket socket.AF_INET socket.SOCK_STREAM))
+(def botnick "hyrb")
+(def host "tilde.town")
+(def port 6667)
+(def channel "#m455-dev")
+(def privmsg "PRIVMSG")
+
+(defn pong
+      []
+      (.send ircsock (bytes "PONG :message\r\n" "utf-8")))
+
+(defn connect
+      []
+      (.connect ircsock (tuple [host port]));;blahhh can't figure this part out
+      (pong)
+      (.send ircsock (bytes (.format "NICK {}\r\n" botnick) "utf-8"))
+      (.send ircsock (bytes (.format "USER {} {} {} :{}\r\n" botnick botnick botnick botnick) "utf-8"))
+      (.send ircsock (bytes (.format "JOIN {}\r\n" channel) "utf-8"))
+      (print (+ botnick " has connected to the host")))
+
+(defn leave
+      []
+      (.send ircsock (bytes "QUIT :leaving\r\n" "utf-8"))
+      (print botnick + " disconnected from the host")
+      (.exit sys))
+
+(defn send-message
+      [usermessage]
+      (.send ircsock (bytes (.format "{} {} :{}\r\n" privmsg channel usermessage) "utf-8")))
+
+(defn find-stuff
+      []
+      (while True
+             
+             (setv hostdata (str (.decode (.recv ircsock 1024) "utf-8" "replace")))
+             ;;(print(repr hostdata))
+             (setv rollcall (.findall re (.format "{} {} :!rollcall\r\n" privmsg channel) hostdata))
+             (setv ping (.findall re "PING :host\r\n" hostdata))
+             
+             (if rollcall
+               (do
+                 (setv rollcall_response "Hello! I am Hyrb. I am m455's bot. I respond to !rollcall")
+                 (send-message rollcall_response)
+                 (.sleep time 1))
+                 (.sleep time 1))
+
+             (if ping
+               (do
+                 (pong)
+                 (.sleep time 1))
+                 (.sleep time 1))))
+
+(defn main
+      []
+      (connect)
+      (find-stuff))
+
+(main)
