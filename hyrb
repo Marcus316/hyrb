@@ -55,7 +55,7 @@
              (setv rollcall (find-command "!rollcall" hostdata))
              (setv cpu (find-command "!cpu" hostdata))
              (setv weather (find-command "!weather ([a-zA-z]+ [a-zA-Z]+)" hostdata))
-             (setv water (find-command (.format "!water {}" botnick) hostdata))
+             (setv water (find-command (.format "!water {}\s?" botnick) hostdata))
              (setv hug (find-command "!hug" hostdata))
              (setv hug-someone (find-command "!hug (.*)" hostdata))
              (setv sucks (find-command "!sucks (.*)" hostdata))
@@ -67,22 +67,19 @@
                (do
                  (setv rollcall-response "Hello! I am Hyrb! I am m455's bot. I respond to !rollcall, !cpu, !weather yourcounrty yourcity, !water hyrb, !hug, !hug someone, and !sucks typewhatsucks")
                  (send-message rollcall-response)
-                 (.sleep time 1))
-               (.sleep time 1))
+                 (.sleep time 1)))
 
              (if cpu
                (do
                  (setv cpu-response (run-command "cpu"))
                  (send-message cpu-response)
-                 (.sleep time 1))
-               (.sleep time 1))
+                 (.sleep time 1)))
 
              (if weather
                (do
                  (setv weather-response (run-command (.format "hycast {}" (get weather 0))))
                  (send-message weather-response)
-                 (.sleep time 1))
-               (.sleep time 1))
+                 (.sleep time 1)))
 
              (if water
                (do
@@ -92,8 +89,7 @@
                                                        "ohmy, you did me a frighten"
                                                        "stop that"]))
                  (send-message water-response)
-                 (.sleep time 1))
-               (.sleep time 1))
+                 (.sleep time 1)))
 
             (if hug
               (do
@@ -102,8 +98,7 @@
                                                     (.format "*gives {} a biggggggg warm bot hug*" (get hug-receiver 0))
                                                     (.format "*hugs {} tightly*" (get hug-receiver 0))]))
                 (send-message hug-response)
-                (.sleep time 1))
-              (.sleep time 1))
+                (.sleep time 1)))
 
             (if hug-someone
               (do
@@ -111,8 +106,7 @@
                                                     (.format "*gives {} a biggggggg warm bot hug*" (get hug-someone 0))
                                                     (.format "*hugs {} tightly*" (get hug-someone 0))]))
                 (send-message hug-response)
-                (.sleep time 1))
-              (.sleep time 1))
+                (.sleep time 1)))
 
             (if sucks
               (do
@@ -121,14 +115,12 @@
                                                       (.format "{} sucks." (get sucks 0))
                                                       (.format "i completely agree with you! {} sucks!" (get sucks 0))]))
                 (send-message sucks-response)
-                (.sleep time 1))
-              (.sleep time 1))
+                (.sleep time 1)))
 
              (if ping
                (do
                  (pong)
-                 (.sleep time 1))
-               (.sleep time 1))))
+                 (.sleep time 1)))))
 
 (defn main
       []
