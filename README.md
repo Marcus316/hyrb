@@ -1,2 +1,2 @@
 # hyrb
-A translation of one of my irc bots (Python to Hy)
+A translation of one of my IRC bots (Python to Hy)
