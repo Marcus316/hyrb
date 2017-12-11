@@ -55,7 +55,7 @@
              (setv rollcall (find-command "!rollcall" hostdata))
              (setv cpu (find-command "!cpu" hostdata))
              (setv weather (find-command "!weather ([a-zA-z]+ [a-zA-Z]+)" hostdata))
-             (setv water (find-command (.format "!water {}\s?" botnick) hostdata))
+             (setv water (find-command (.format "!water {}\s+?" botnick) hostdata))
              (setv hug (find-command "!hug" hostdata))
              (setv hug-someone (find-command "!hug (.*)" hostdata))
              (setv sucks (find-command "!sucks (.*)" hostdata))
@@ -102,18 +102,18 @@
 
             (if hug-someone
               (do
-                (setv hug-response (.choice random [(.format "*hugs {} because they deserve it*" (get hug-someone 0))
-                                                    (.format "*gives {} a biggggggg warm bot hug*" (get hug-someone 0))
-                                                    (.format "*hugs {} tightly*" (get hug-someone 0))]))
+                (setv hug-response (.choice random [(.format "*hugs {} because they deserve it*" (.rstrip (get hug-someone 0) " "))
+                                                    (.format "*gives {} a biggggggg warm bot hug*" (.rstrip (get hug-someone 0) " "))
+                                                    (.format "*hugs {} tightly*" (.rstrip (get hug-someone 0) " "))]))
                 (send-message hug-response)
                 (.sleep time 1)))
 
             (if sucks
               (do
-                (setv sucks-response (.choice random [(.format "you know what sucks? {} sucks!" (get sucks 0))
-                                                      (.format "fuck, {}, sucks!" (get sucks 0))
-                                                      (.format "{} sucks." (get sucks 0))
-                                                      (.format "i completely agree with you! {} sucks!" (get sucks 0))]))
+                (setv sucks-response (.choice random [(.format "you know what sucks? {} sucks!" (.rstrip (get sucks 0)" "))
+                                                      (.format "fuck, {}, sucks!" (.rstrip (get sucks 0) " "))
+                                                      (.format "{} sucks." (.rstrip (get sucks 0) " "))
+                                                      (.format "i completely agree with you! {} sucks!" (.rstrip (get sucks 0) " "))]))
                 (send-message sucks-response)
                 (.sleep time 1)))
 
