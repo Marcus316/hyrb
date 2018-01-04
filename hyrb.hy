@@ -65,14 +65,14 @@
 
              (if rollcall
                (do
-                 (setv rollcall-response "Hello! I am Hyrb! I am m455's bot. I respond to !rollcall, !cpu, !weather yourcounrty yourcity, !water hyrb, !hug, !hug someone, and !sucks typewhatsucks")
+                 (setv rollcall-response "Hello! I am Hyrb! I am m455's bot. I respond to !rollcall, !ram, !weather yourcounrty yourcity, !water hyrb, !hug, !hug someone, and !sucks typewhatsucks")
                  (send-message rollcall-response)
                  (.sleep time 1)))
 
-             (if cpu
+             (if ram
                (do
-                 (setv cpu-response (run-command "cpu"))
-                 (send-message cpu-response)
+                 (setv ram-response (run-command "ram"))
+                 (send-message ram-response)
                  (.sleep time 1)))
 
              (if weather
