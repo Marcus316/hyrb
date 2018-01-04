@@ -53,7 +53,7 @@
       (while True
              (setv hostdata (str (.decode (.recv ircsock 1024) "utf-8" "replace")))
              (setv rollcall (find-command "!rollcall" hostdata))
-             (setv cpu (find-command "!cpu" hostdata))
+             (setv ram (find-command "!ram" hostdata))
              (setv weather (find-command "!weather ([a-zA-z]+ [a-zA-Z]+)" hostdata))
              (setv water (find-command (.format "!water ({})\s?" botnick) hostdata))
              (setv hug (find-command "!hug" hostdata))
