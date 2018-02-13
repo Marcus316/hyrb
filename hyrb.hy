@@ -6,7 +6,7 @@
 (def botnick "hyrb")
 (def host "tilde.town")
 (def port 6667)
-(def channel "#bots")
+(def channel "#tildetown")
 (def privmsg "PRIVMSG")
 
 (defn connect
