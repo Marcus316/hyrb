@@ -96,17 +96,17 @@
              (if hug
                (do
                  (setv hug-receiver (find-sender "!hug" hostdata))
-                 (setv hug-response (.choice random [(.format "*hugs {} because they deserve it*" (get hug-receiver 0))
-                                                     (.format "*gives {} a biggggggg warm bot hug*" (get hug-receiver 0))
-                                                     (.format "*hugs {} tightly*" (get hug-receiver 0))]))
+                 (setv hug-response (.choice random [(.format "*offers {} hugs because they deserve it*" (get hug-receiver 0))
+                                                     (.format "*offers {} a biggggggg warm bot hug*" (get hug-receiver 0))
+                                                     (.format "*offers {} a nice tight hug*" (get hug-receiver 0))]))
                  (send-message hug-response)
                  (.sleep time 1)))
 
              (if hug-someone
                (do
-                 (setv hug-response (.choice random [(.format "*hugs {} because they deserve it*" (.rstrip (get hug-someone 0) " "))
-                                                     (.format "*gives {} a biggggggg warm bot hug*" (.rstrip (get hug-someone 0) " "))
-                                                     (.format "*hugs {} tightly*" (.rstrip (get hug-someone 0) " "))]))
+                 (setv hug-response (.choice random [(.format "*offers {} hugs because they deserve it*" (.rstrip (get hug-someone 0) " "))
+                                                     (.format "*offers {} a biggggggg warm bot hug*" (.rstrip (get hug-someone 0) " "))
+                                                     (.format "*offers {} a nice tight hug*" (.rstrip (get hug-someone 0) " "))]))
                  (send-message hug-response)
                  (.sleep time 1)))
 
