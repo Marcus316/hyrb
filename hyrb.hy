@@ -56,7 +56,7 @@
 
              (setv rollcall (find-trigger "!rollcall" hostdata))
              (setv ram (find-trigger "!ram" hostdata))
-             (setv weather (find-trigger "!weather ([a-zA-z]+ [a-zA-Z]+)" hostdata))
+            ;(setv weather (find-trigger "!weather ([a-zA-z]+ [a-zA-Z]+)" hostdata))
              (setv water (find-trigger (.format "!water ({})\s?" botnick) hostdata))
              (setv hug (find-trigger "!hug" hostdata))
              (setv hug-someone (find-trigger "!hug (.*)" hostdata))
@@ -77,11 +77,11 @@
                  (send-message ram-response)
                  (.sleep time 1)))
 
-             (if weather
-               (do
-                 (setv weather-response (run-command (.format "hycast {}" (get weather 0))))
-                 (send-message weather-response)
-                 (.sleep time 1)))
+            ;(if weather
+            ;  (do
+            ;    (setv weather-response (run-command (.format "hycast {}" (get weather 0))))
+            ;    (send-message weather-response)
+            ;    (.sleep time 1)))
 
              (if water
                (do
