@@ -11,7 +11,7 @@
 
 (defn connect
       []
-      (.connect ircsock (tuple [host port]));;blahhh can't figure this part out
+      (.connect ircsock (tuple [host port]))
       (pong)
       (.send ircsock (bytes (.format "NICK {}\r\n" botnick) "utf-8"))
       (.send ircsock (bytes (.format "USER {} {} {} :{}\r\n" botnick botnick botnick botnick) "utf-8"))
