@@ -1,12 +1,12 @@
 #!/usr/bin/env hy
 
-(import socket time sys re random os)
+(import socket time re random os)
 
 (def ircsock (.socket socket socket.AF_INET socket.SOCK_STREAM))
 (def botnick "hyrb")
 (def host "tilde.town")
 (def port 6667)
-(def channel "#m455dev")
+(def channel "#tildetown")
 
 (def privmsg "PRIVMSG")
 
@@ -75,7 +75,8 @@
                        !water hyrb, 
                        !hug, 
                        !hug type-someone/something, 
-                       and !sucks type-something-that-sucks")
+                       !sucks type-something-that-sucks,
+                       !church-members")
                        (send-message rollcall-response)
                        (.sleep time 1)))
 
