@@ -69,14 +69,7 @@
 
              (if rollcall
                (do
-                 (setv rollcall-response "Hello! I am Hyrb! I am m455's bot. I respond to 
-                       !rollcall, 
-                       !ram, 
-                       !water hyrb, 
-                       !hug, 
-                       !hug type-someone/something, 
-                       !sucks type-something-that-sucks,
-                       !church-members")
+                 (setv rollcall-response "Hello! I am Hyrb! I am m455's bot. I respond to !rollcall, !ram, !water hyrb, !hug, !hug type-someone/something, !sucks type-something-that-sucks, !church")
                        (send-message rollcall-response)
                        (.sleep time 1)))
 
