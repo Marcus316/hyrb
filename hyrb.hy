@@ -3,10 +3,10 @@
 (import socket time re random os sys)
 
 (def ircsock (.socket socket socket.AF_INET socket.SOCK_STREAM))
-(def botnick "hyrb[bot]")
+(def botnick "hyrb")
 (def host "tilde.town")
 (def port 6667)
-(def channel "#rufus")
+(def channel "#tildetown")
 
 (def privmsg "PRIVMSG")
 
