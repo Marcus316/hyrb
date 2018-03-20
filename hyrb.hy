@@ -138,13 +138,13 @@
 
                      (setv member-plural (.choice random ["buddies"
                                                           "folks"
-                                                          "tidlings"
+                                                          "tildelings"
                                                           "cuties"
                                                           "townies"]))
 
                      (setv member-singular (.choice random ["buddy"
                                                             "folk"
-                                                            "tidling"
+                                                            "tildeling"
                                                             "cutie"
                                                             "townie"]))
 
