@@ -6,7 +6,7 @@
 (def botnick "hyrb")
 (def host "tilde.town")
 (def port 6667)
-(def channel "#m455dev")
+(def channel "#tildetown")
 
 (def privmsg "PRIVMSG")
 
@@ -126,75 +126,75 @@
 
                  (if church-members
                    (do
-                     (setv pre (.choice random ["in this very moment in time "
-                                                "right at this second "
-                                                "most likely "
-                                                "presumptuously "]))
+                     (setv pre (.choice random ["in this very moment in time"
+                                                "right at this second"
+                                                "most likely"
+                                                "presumptuously"]))
 
-                     (setv pre2 (.choice random ["in this very moment in time "
-                                                 "right at this second "
-                                                 "most likely "
-                                                 "presumptuously "]))
+                     (setv pre2 (.choice random ["in this very moment in time"
+                                                 "right at this second"
+                                                 "most likely"
+                                                 "presumptuously"]))
 
-                     (setv member-plural (.choice random [" buddies "
-                                                          " folks "
-                                                          " tidlings "
-                                                          " cuties "
-                                                          " townies "]))
+                     (setv member-plural (.choice random ["buddies"
+                                                          "folks"
+                                                          "tidlings"
+                                                          "cuties"
+                                                          "townies"]))
 
-                     (setv member-singular (.choice random [" buddy "
-                                                            " folk "
-                                                            " tidling "
-                                                            " cutie "
-                                                            " townie "]))
+                     (setv member-singular (.choice random ["buddy"
+                                                            "folk"
+                                                            "tidling"
+                                                            "cutie"
+                                                            "townie"]))
 
-                     (setv intensifier (.choice random [" utmost "
-                                                        " most"
-                                                        " fucking "
-                                                        " hella "
-                                                        " most "
-                                                        " real "
-                                                        " terribly "
-                                                        " dreadfully "
-                                                        " awefully "
-                                                        " extremely "
-                                                        " caringly "
-                                                        " soothingly "
-                                                        " dead "
-                                                        " rather "
-                                                        " somewhat "
-                                                        " surpassingly "
-                                                        " excessively "
-                                                        " colossally "
-                                                        " frightfully "
-                                                        " astoundingly "
-                                                        " exceptionally "
-                                                        " strikingly "
-                                                        " right "]))
+                     (setv intensifier (.choice random ["utmost"
+                                                        "most"
+                                                        "fucking"
+                                                        "hella"
+                                                        "most"
+                                                        "real"
+                                                        "terribly"
+                                                        "dreadfully"
+                                                        "awefully"
+                                                        "extremely"
+                                                        "caringly"
+                                                        "soothingly"
+                                                        "dead"
+                                                        "rather"
+                                                        "somewhat"
+                                                        "surpassingly"
+                                                        "excessively"
+                                                        "colossally"
+                                                        "frightfully"
+                                                        "astoundingly"
+                                                        "exceptionally"
+                                                        "strikingly"
+                                                        "right"]))
 
-                     (setv intensifier2 (.choice random [" utmost "
-                                                         " most"
-                                                         " fucking "
-                                                         " hella "
-                                                         " most "
-                                                         " real "
-                                                         " terribly "
-                                                         " dreadfully "
-                                                         " awefully "
-                                                         " extremely "
-                                                         " caringly "
-                                                         " soothingly "
-                                                         " dead "
-                                                         " rather "
-                                                         " somewhat "
-                                                         " surpassingly "
-                                                         " excessively "
-                                                         " colossally "
-                                                         " frightfully "
-                                                         " astoundingly "
-                                                         " exceptionally "
-                                                         " strikingly "
-                                                         " right "]))
+                     (setv intensifier2 (.choice random ["utmost"
+                                                         "most"
+                                                         "fucking"
+                                                         "hella"
+                                                         "most"
+                                                         "real"
+                                                         "terribly"
+                                                         "dreadfully"
+                                                         "awefully"
+                                                         "extremely"
+                                                         "caringly"
+                                                         "soothingly"
+                                                         "dead"
+                                                         "rather"
+                                                         "somewhat"
+                                                         "surpassingly"
+                                                         "excessively"
+                                                         "colossally"
+                                                         "frightfully"
+                                                         "astoundingly"
+                                                         "exceptionally"
+                                                         "strikingly"
+                                                         "right"]))
 
                      (setv adjective (.choice random ["great"
                                                       "precious"
@@ -214,10 +214,10 @@
                                                        "cute"
                                                        "dear"]))
 
-                     (setv random-structure (.choice random [(+ pre "it is said that" member-plural "of the church of tilde are " pre2 intensifier adjective)
-                                                             (+ "behold the " adjective " as fuck" member-plural "of the church of tilde")
+                     (setv random-structure (.choice random [(+ pre " it is said that " member-plural " of the church of tilde are " pre2 " "  intensifier " " adjective)
+                                                             (+ "behold the " adjective " as fuck " member-plural " of the church of tilde")
                                                              (+ "the church of tilde is one " adjective "-ass church")
-                                                             (+ "when you're a" intensifier adjective member-singular "of the church, you feel" intensifier2 adjective2 " every day")]))
+                                                             (+ "when you're a " intensifier " " adjective " " member-singular " of the church, you feel " intensifier2 " "  adjective2 " every day")]))
                      (send-message random-structure)
                      (.sleep time 1))
 
