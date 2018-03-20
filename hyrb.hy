@@ -62,7 +62,7 @@
              (setv hug (find-trigger "!hug" hostdata))
              (setv hug-someone (find-trigger "!hug (.*)" hostdata))
              (setv sucks (find-trigger "!sucks (.*)" hostdata))
-             (setv church-members (find-trigger "!church-members" hostdata))
+             (setv church (find-trigger "!church" hostdata))
 
              ;;uncomment this to view host messages
              ;;(print(repr hostdata))
@@ -124,7 +124,7 @@
                      (send-message sucks-response)
                      (.sleep time 1)))
 
-                 (if church-members
+                 (if church
                    (do
                      (setv pre (.choice random ["in this very moment in time"
                                                 "right at this second"
